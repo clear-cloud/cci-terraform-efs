@@ -1,6 +1,10 @@
 # ---------------------------
 # EFS Vars
 # ---------------------------
+variable "orchestration" {}
+variable "vpc_id" {}
+variable "environment" {}
+variable "contact" {}
 variable "efs_encrypted" {
   description = "Encrypt the EFS share"
   default     = "true"
