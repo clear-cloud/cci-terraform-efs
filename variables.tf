@@ -2,16 +2,20 @@
 # EFS Vars
 # ---------------------------
 variable "orchestration" {}
+
 variable "vpc_id" {}
 variable "environment" {}
 variable "contact" {}
+
 variable "efs_encrypted" {
   description = "Encrypt the EFS share"
   default     = "true"
 }
+
 variable "build_ref" {
   description = "Build reference to allow for unique name sto be generated"
-} 
+}
+
 variable "performance_mode" {
   description = "EFS performance mode.https://docs.aws.amazon.com/efs/latest/ug/performance.html"
   default     = "generalPurpose"
