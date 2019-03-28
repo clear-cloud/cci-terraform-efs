@@ -3,7 +3,7 @@
 # --------------------------
 resource "aws_security_group" "private_subnet_a" {
   count       = "${var.private_subnet_a != "" ? 1 : 0}"
-  name        = "${var.environment}.efs.subnet.a.sg"
+  name        = "${var.environment}.${var.build_ref}.efs.subnet.a.sg"
   description = "Security group for controlling access to EFS from subnet A"
   vpc_id      = "${var.vpc_id}"
 
@@ -23,7 +23,7 @@ resource "aws_security_group" "private_subnet_a" {
 
 resource "aws_security_group" "private_subnet_b" {
   count       = "${var.private_subnet_b != "" ? 1 : 0}"
-  name        = "${var.environment}.efs.subnet.b.sg"
+  name        = "${var.environment}.${var.build_ref}.efs.subnet.b.sg"
   description = "Security group for controlling access to EFS from subnet B"
   vpc_id      = "${var.vpc_id}"
 
