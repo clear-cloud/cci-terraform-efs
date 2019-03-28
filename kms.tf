@@ -11,6 +11,6 @@ resource "aws_kms_key" "efskey" {
 #
 
 resource "aws_kms_alias" "efs" {
-  name          = "alias/efs-${var.environment}"
+  name          = "alias/efs-${var.environment}-${var.build_ref}"
   target_key_id = "${aws_kms_key.efskey.key_id}"
 }
